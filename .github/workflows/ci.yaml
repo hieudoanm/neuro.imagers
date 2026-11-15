@@ -303,7 +303,7 @@ jobs:
         run: |
           gh release create latest \
             --title "Neuro Lab (latest)" \
-            --notes-file README.md \
+            --notes-file RELEASE.md \
             --prerelease=false
 
       - name: Upload bundles to release
