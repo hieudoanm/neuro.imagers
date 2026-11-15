@@ -29,6 +29,18 @@ export const metadata: Metadata = {
     template: '%s — Neuro Lab',
   },
   description: DESCRIPTION,
+  keywords: [
+    'EEG',
+    'MEG',
+    'MRI',
+    'neuroscience',
+    'brain data analysis',
+    'desktop app',
+    'Rust',
+    'MCP server',
+  ],
+  authors: [{ name: 'hieudoan', url: 'https://github.com/hieudoanm/neuro.lab' }],
+  category: 'software',
   openGraph: {
     siteName: 'Neuro Lab',
     type: 'website',
@@ -46,6 +58,28 @@ export const metadata: Metadata = {
   },
 };
 
+
+const JSON_LD = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      name: 'Neuro Lab',
+      url: 'https://hieudoanm.github.io/neuro.lab/',
+      description: 'Neuro Lab is a local-first neuroimaging desktop app for EEG, MEG, and MRI. Rust processing crates behind a Tauri interface — recordings never leave your machine.',
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Neuro Lab',
+      applicationCategory: 'MultimediaApplication',
+      description: 'Neuro Lab is a local-first neuroimaging desktop app for EEG, MEG, and MRI. Rust processing crates behind a Tauri interface — recordings never leave your machine.',
+      url: 'https://hieudoanm.github.io/neuro.lab/',
+      codeRepository: 'https://github.com/hieudoanm/neuro.lab',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+  ]
+};
+
 interface RootLayoutProps {
   children: ReactNode;
 }
@@ -56,6 +90,10 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => (
     data-theme="neurolab"
     className={`scroll-smooth antialiased motion-reduce:scroll-auto ${inter.className}`}>
     <body className="bg-base-100 text-base-content m-0 leading-relaxed">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
       <Navbar
         name="Neuro Lab"
         logoSrc={LOGO}

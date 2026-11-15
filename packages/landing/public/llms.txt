@@ -1,0 +1,24 @@
+# Neuro Lab
+
+> Neuro Lab is a local-first neuroimaging desktop app for EEG, MEG, and MRI. Rust processing crates behind a Tauri interface — recordings never leave your machine.
+
+- Repository: https://github.com/hieudoanm/neuro.lab
+- Site: https://hieudoanm.github.io/neuro.lab/
+
+## Documentation
+
+### concepts
+
+- [Datasets, experiments, and provenance](https://hieudoanm.github.io/neuro.lab/docs/concepts/datasets-and-provenance/)
+- [Pipelines](https://hieudoanm.github.io/neuro.lab/docs/concepts/pipelines/)
+### getting-started
+
+- [Desktop app](https://hieudoanm.github.io/neuro.lab/docs/getting-started/desktop-app/)
+- [neuro CLI](https://hieudoanm.github.io/neuro.lab/docs/getting-started/cli/)
+### guides
+
+- [MCP server](https://hieudoanm.github.io/neuro.lab/docs/guides/mcp-server/)
+- [Running an analysis](https://hieudoanm.github.io/neuro.lab/docs/guides/analysis/)
+### overview
+
+- [neuro.lab documentation](https://hieudoanm.github.io/neuro.lab/docs/)
