@@ -9,7 +9,7 @@ name = "neuro_imagers_desktop_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "=2.7.4", features = [] }
+tauri-build = { version = "=2.7.5", features = [] }
 
 [dependencies]
 neuro-core = { path = "../../../crates/neuro-core" }
@@ -19,7 +19,7 @@ neuro-mri = { path = "../../../crates/neuro-mri" }
 neuro-store = { path = "../../../crates/neuro-store" }
 serde = { version = "=1.0.229", features = ["derive"] }
 serde_json = "=1.0.154"
-tauri = { version = "=2.12.5", features = [] }
+tauri = { version = "=2.12.6", features = [] }
 thiserror = "=2.0.21"
 chrono = { version = "=0.4.45", features = ["serde"] }
 uuid = { version = "=1.29.2", features = ["v4"] }
