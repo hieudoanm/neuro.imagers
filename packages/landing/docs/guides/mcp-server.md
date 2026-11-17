@@ -41,3 +41,12 @@ stdout. It delegates every tool call to the `neuro` binary itself.
 
 All tools return the same JSON the CLI prints. See the
 [CLI guide](../getting-started/cli.md) for command details.
+
+
+### Streamable HTTP
+
+`neuro mcp --http 127.0.0.1:8080` also accepts `--http <addr>` (and `--token <token>`, or the
+`MCP_AUTH_TOKEN` environment variable) to serve the same MCP surface over
+streamable HTTP at `http://<addr>/mcp` — the transport used by ChatGPT
+connectors and remote Claude clients. When a token is configured, every
+request must carry `Authorization: Bearer <token>`.
