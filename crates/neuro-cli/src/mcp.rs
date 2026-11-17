@@ -118,12 +118,22 @@ fn path_schema(extra: Value) -> Value {
     })
 }
 
+fn annotations(read_only: bool, destructive: bool, idempotent: bool, open_world: bool) -> Value {
+    json!({
+        "readOnlyHint": read_only,
+        "destructiveHint": destructive,
+        "idempotentHint": idempotent,
+        "openWorldHint": open_world
+    })
+}
+
 fn tools_list() -> Value {
     json!({
         "tools": [
             {
                 "name": "inspect_eeg",
                 "description": "Inspect an EEG recording (NPY, EDF/EDF+, BrainVision) and return JSON metadata",
+                "annotations": annotations(true, false, true, false),
                 "inputSchema": path_schema(json!({
                     "sfreq": {"type": "number", "description": "Fallback sampling rate for formats without one (NPY)"}
                 }))
@@ -131,11 +141,13 @@ fn tools_list() -> Value {
             {
                 "name": "validate_eeg",
                 "description": "Validate an EEG file set and report findings",
+                "annotations": annotations(true, false, true, false),
                 "inputSchema": path_schema(json!({}))
             },
             {
                 "name": "export_eeg",
                 "description": "Export an EEG recording to EDF+",
+                "annotations": annotations(false, false, true, false),
                 "inputSchema": path_schema(json!({
                     "output": {"type": "string", "description": "Output path (default: <stem>.export.edf beside the input)"},
                     "sfreq": {"type": "number", "description": "Sampling rate override"}
@@ -144,6 +156,7 @@ fn tools_list() -> Value {
             {
                 "name": "generate_eeg",
                 "description": "Generate a deterministic synthetic EEG recording (NPY + manifest)",
+                "annotations": annotations(false, false, true, false),
                 "inputSchema": {
                     "type": "object",
                     "properties": {
@@ -161,21 +174,25 @@ fn tools_list() -> Value {
             {
                 "name": "inspect_meg",
                 "description": "Inspect a MEG recording (FIF, CTF .ds, KIT, BIDS, OPM)",
+                "annotations": annotations(true, false, true, false),
                 "inputSchema": path_schema(json!({}))
             },
             {
                 "name": "validate_meg",
                 "description": "Validate a MEG file set and report findings",
+                "annotations": annotations(true, false, true, false),
                 "inputSchema": path_schema(json!({}))
             },
             {
                 "name": "inspect_mri",
                 "description": "Inspect a NIfTI volume",
+                "annotations": annotations(true, false, true, false),
                 "inputSchema": path_schema(json!({}))
             },
             {
                 "name": "convert_dicom",
                 "description": "Convert a DICOM file or series directory to NIfTI",
+                "annotations": annotations(false, false, true, false),
                 "inputSchema": {
                     "type": "object",
                     "properties": {
@@ -263,4 +280,87 @@ pub fn run() -> std::io::Result<()> {
         }
     }
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn tools_list_declares_all_tools_with_four_hints() {
+        let list = tools_list();
+        let tools = list["tools"].as_array().expect("tools array");
+        let mut names: Vec<&str> = tools
+            .iter()
+            .map(|tool| tool["name"].as_str().expect("tool name"))
+            .collect();
+        names.sort_unstable();
+        assert_eq!(
+            names,
+            [
+                "convert_dicom",
+                "export_eeg",
+                "generate_eeg",
+                "inspect_eeg",
+                "inspect_meg",
+                "inspect_mri",
+                "validate_eeg",
+                "validate_meg",
+            ]
+        );
+        for tool in tools {
+            let name = tool["name"].as_str().expect("tool name");
+            let hints = &tool["annotations"];
+            for hint in [
+                "readOnlyHint",
+                "destructiveHint",
+                "idempotentHint",
+                "openWorldHint",
+            ] {
+                assert!(
+                    hints.get(hint).is_some_and(Value::is_boolean),
+                    "{name} missing boolean annotation {hint}: {hints}"
+                );
+            }
+            // neuro is local-only: no tool may reach the network.
+            assert_eq!(
+                hints.get("openWorldHint"),
+                Some(&Value::Bool(false)),
+                "{name} must not be open-world: {hints}"
+            );
+        }
+    }
+
+    #[test]
+    fn read_only_tools_are_marked() {
+        let tools = tools_list()["tools"].clone();
+        let tools = tools.as_array().expect("tools array");
+        for name in [
+            "inspect_eeg",
+            "validate_eeg",
+            "inspect_meg",
+            "validate_meg",
+            "inspect_mri",
+        ] {
+            let tool = tools
+                .iter()
+                .find(|tool| tool["name"] == name)
+                .unwrap_or_else(|| panic!("{name} tool"));
+            assert_eq!(tool["annotations"]["readOnlyHint"], json!(true), "{name}");
+            assert_eq!(tool["annotations"]["idempotentHint"], json!(true), "{name}");
+        }
+        for name in ["export_eeg", "generate_eeg", "convert_dicom"] {
+            let tool = tools
+                .iter()
+                .find(|tool| tool["name"] == name)
+                .unwrap_or_else(|| panic!("{name} tool"));
+            assert_eq!(tool["annotations"]["readOnlyHint"], json!(false), "{name}");
+            assert_eq!(
+                tool["annotations"]["destructiveHint"],
+                json!(false),
+                "{name}"
+            );
+            assert_eq!(tool["annotations"]["idempotentHint"], json!(true), "{name}");
+        }
+    }
 }
