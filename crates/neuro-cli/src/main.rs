@@ -1,4 +1,5 @@
 mod mcp;
+mod mcp_http;
 
 use clap::{Parser, Subcommand};
 use std::path::PathBuf;
@@ -65,8 +66,15 @@ enum Command {
         #[arg(short, long)]
         output: PathBuf,
     },
-    /// Run an MCP server over stdio JSON-RPC
-    Mcp,
+    /// Run an MCP server (stdio by default, or streamable-HTTP with --http)
+    Mcp {
+        /// Serve MCP over HTTP at this address instead of stdio
+        #[arg(long)]
+        http: Option<String>,
+        /// Bearer token required on HTTP requests (or MCP_AUTH_TOKEN)
+        #[arg(long)]
+        token: Option<String>,
+    },
 }
 
 fn print_json(value: &serde_json::Value, pretty: bool) {
@@ -91,9 +99,18 @@ fn fail(message: impl std::fmt::Display) -> ! {
 
 fn main() {
     let cli = Cli::parse();
-    if matches!(cli.command, Command::Mcp) {
-        if let Err(error) = mcp::run() {
-            fail(format!("mcp: {error}"));
+    if matches!(cli.command, Command::Mcp { .. }) {
+        if let Command::Mcp { http, token } = cli.command {
+            let result = match http {
+                Some(addr) => mcp::run_http(
+                    &addr,
+                    token.or_else(|| std::env::var("MCP_AUTH_TOKEN").ok()),
+                ),
+                None => mcp::run(),
+            };
+            if let Err(error) = result {
+                fail(format!("mcp: {error}"));
+            }
         }
         return;
     }
@@ -134,7 +151,7 @@ fn main() {
             neuro_mri::dicom::dicom_to_nifti(&input, &output)
         }
         .map_err(|error| error.to_string()),
-        Command::Mcp => unreachable!("handled before dispatch"),
+        Command::Mcp { .. } => unreachable!("handled before dispatch"),
     };
     match result {
         Ok(value) => print_json(&value, cli.pretty),
