@@ -20,6 +20,19 @@
     "test": "pnpm --filter @neuro-imagers/desktop test",
     "typecheck": "pnpm --filter @neuro-imagers/desktop typecheck",
     "tauri:dev": "pnpm --filter @neuro-imagers/desktop tauri:dev",
-    "tauri:build": "pnpm --filter @neuro-imagers/desktop tauri:build"
+    "tauri:build": "pnpm --filter @neuro-imagers/desktop tauri:build",
+    "prepare": "husky || true"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs,json,jsonc,md,mdx,css,scss,html,yml,yaml}": "prettier --cache --write",
+    "!(vendor)/**/*.rs": "rustfmt --edition 2024"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
+    "husky": "9.1.7",
+    "lint-staged": "17.6.1",
+    "prettier": "3.10.1",
+    "prettier-plugin-tailwindcss": "0.8.1"
   }
 }
