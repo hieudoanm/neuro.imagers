@@ -588,11 +588,18 @@
   ],
   "frameworks": [
     {
+      "name": "chrono",
+      "displayName": "chrono",
+      "family": "rust",
+      "version": null,
+      "confidence": "high"
+    },
+    {
       "name": "clap.rs",
       "displayName": "clap.rs",
       "family": "rust",
       "version": null,
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "name": "nextjs",
@@ -602,10 +609,66 @@
       "confidence": "high"
     },
     {
+      "name": "playwright",
+      "displayName": "Playwright",
+      "family": "ecmascript",
+      "version": "tauri-apps",
+      "confidence": "high"
+    },
+    {
       "name": "react",
       "displayName": "React",
       "family": "ecmascript",
       "version": "eslint",
+      "confidence": "high"
+    },
+    {
+      "name": "serde",
+      "displayName": "Serde",
+      "family": "rust",
+      "version": null,
+      "confidence": "high"
+    },
+    {
+      "name": "tailwindcss",
+      "displayName": "Tailwind CSS",
+      "family": "ecmascript",
+      "version": "tailwindcss",
+      "confidence": "medium"
+    },
+    {
+      "name": "tauri",
+      "displayName": "Tauri",
+      "family": "ecmascript",
+      "version": "eslint",
+      "confidence": "high"
+    },
+    {
+      "name": "thiserror",
+      "displayName": "thiserror",
+      "family": "rust",
+      "version": null,
+      "confidence": "high"
+    },
+    {
+      "name": "uuid",
+      "displayName": "UUID",
+      "family": "go",
+      "version": null,
+      "confidence": "high"
+    },
+    {
+      "name": "vite",
+      "displayName": "Vite",
+      "family": "ecmascript",
+      "version": "tauri-apps",
+      "confidence": "medium"
+    },
+    {
+      "name": "vitest",
+      "displayName": "Vitest",
+      "family": "ecmascript",
+      "version": "tauri-apps",
       "confidence": "high"
     }
   ],
@@ -9206,11 +9269,21 @@
       "language": "bash"
     },
     {
+      "id": "framework:chrono",
+      "kind": "framework",
+      "name": "chrono",
+      "metadata": {
+        "confidence": "high",
+        "family": "rust",
+        "framework": "chrono"
+      }
+    },
+    {
       "id": "framework:clap.rs",
       "kind": "framework",
       "name": "clap.rs",
       "metadata": {
-        "confidence": "medium",
+        "confidence": "high",
         "family": "rust",
         "framework": "clap.rs"
       }
@@ -9226,6 +9299,16 @@
       }
     },
     {
+      "id": "framework:playwright:tauri-apps",
+      "kind": "framework",
+      "name": "Playwright",
+      "metadata": {
+        "confidence": "high",
+        "family": "ecmascript",
+        "framework": "playwright"
+      }
+    },
+    {
       "id": "framework:react:eslint",
       "kind": "framework",
       "name": "React",
@@ -9233,6 +9316,76 @@
         "confidence": "high",
         "family": "ecmascript",
         "framework": "react"
+      }
+    },
+    {
+      "id": "framework:serde",
+      "kind": "framework",
+      "name": "Serde",
+      "metadata": {
+        "confidence": "high",
+        "family": "rust",
+        "framework": "serde"
+      }
+    },
+    {
+      "id": "framework:tailwindcss:tailwindcss",
+      "kind": "framework",
+      "name": "Tailwind CSS",
+      "metadata": {
+        "confidence": "medium",
+        "family": "ecmascript",
+        "framework": "tailwindcss"
+      }
+    },
+    {
+      "id": "framework:tauri:eslint",
+      "kind": "framework",
+      "name": "Tauri",
+      "metadata": {
+        "confidence": "high",
+        "family": "ecmascript",
+        "framework": "tauri"
+      }
+    },
+    {
+      "id": "framework:thiserror",
+      "kind": "framework",
+      "name": "thiserror",
+      "metadata": {
+        "confidence": "high",
+        "family": "rust",
+        "framework": "thiserror"
+      }
+    },
+    {
+      "id": "framework:uuid",
+      "kind": "framework",
+      "name": "UUID",
+      "metadata": {
+        "confidence": "high",
+        "family": "go",
+        "framework": "uuid"
+      }
+    },
+    {
+      "id": "framework:vite:tauri-apps",
+      "kind": "framework",
+      "name": "Vite",
+      "metadata": {
+        "confidence": "medium",
+        "family": "ecmascript",
+        "framework": "vite"
+      }
+    },
+    {
+      "id": "framework:vitest:tauri-apps",
+      "kind": "framework",
+      "name": "Vitest",
+      "metadata": {
+        "confidence": "high",
+        "family": "ecmascript",
+        "framework": "vitest"
       }
     },
     {
@@ -385155,6 +385308,13 @@
     },
     {
       "source": "repository:.",
+      "target": "framework:chrono",
+      "kind": "uses_framework",
+      "status": "resolved_internal",
+      "origin": "syntax"
+    },
+    {
+      "source": "repository:.",
       "target": "framework:clap.rs",
       "kind": "uses_framework",
       "status": "resolved_internal",
@@ -385169,7 +385329,63 @@
     },
     {
       "source": "repository:.",
+      "target": "framework:playwright:tauri-apps",
+      "kind": "uses_framework",
+      "status": "resolved_internal",
+      "origin": "syntax"
+    },
+    {
+      "source": "repository:.",
       "target": "framework:react:eslint",
+      "kind": "uses_framework",
+      "status": "resolved_internal",
+      "origin": "syntax"
+    },
+    {
+      "source": "repository:.",
+      "target": "framework:serde",
+      "kind": "uses_framework",
+      "status": "resolved_internal",
+      "origin": "syntax"
+    },
+    {
+      "source": "repository:.",
+      "target": "framework:tailwindcss:tailwindcss",
+      "kind": "uses_framework",
+      "status": "resolved_internal",
+      "origin": "syntax"
+    },
+    {
+      "source": "repository:.",
+      "target": "framework:tauri:eslint",
+      "kind": "uses_framework",
+      "status": "resolved_internal",
+      "origin": "syntax"
+    },
+    {
+      "source": "repository:.",
+      "target": "framework:thiserror",
+      "kind": "uses_framework",
+      "status": "resolved_internal",
+      "origin": "syntax"
+    },
+    {
+      "source": "repository:.",
+      "target": "framework:uuid",
+      "kind": "uses_framework",
+      "status": "resolved_internal",
+      "origin": "syntax"
+    },
+    {
+      "source": "repository:.",
+      "target": "framework:vite:tauri-apps",
+      "kind": "uses_framework",
+      "status": "resolved_internal",
+      "origin": "syntax"
+    },
+    {
+      "source": "repository:.",
+      "target": "framework:vitest:tauri-apps",
       "kind": "uses_framework",
       "status": "resolved_internal",
       "origin": "syntax"
@@ -387525,8 +387741,8 @@
   "statistics": {
     "files": 93,
     "packages": 3,
-    "nodes": 5390,
-    "edges": 16621,
+    "nodes": 5399,
+    "edges": 16630,
     "symbols": 4259,
     "unresolvedEdges": 5704,
     "diagnostics": 32,
@@ -387535,7 +387751,7 @@
       "enum": 4,
       "external_symbol": 191,
       "file": 93,
-      "framework": 3,
+      "framework": 12,
       "function": 526,
       "interface": 36,
       "method": 47,
@@ -387555,7 +387771,7 @@
       "exports": 636,
       "implements": 2,
       "imports": 193,
-      "uses_framework": 3,
+      "uses_framework": 12,
       "uses_type": 917
     },
     "byLanguage": {
@@ -387569,13 +387785,22 @@
     "byStatus": {
       "ambiguous": 16,
       "resolved_external": 687,
-      "resolved_internal": 10230,
+      "resolved_internal": 10239,
       "unresolved": 5688
     },
     "byFramework": {
+      "chrono": 1,
       "clap.rs": 1,
       "nextjs": 1,
-      "react": 1
+      "playwright": 1,
+      "react": 1,
+      "serde": 1,
+      "tailwindcss": 1,
+      "tauri": 1,
+      "thiserror": 1,
+      "uuid": 1,
+      "vite": 1,
+      "vitest": 1
     }
   }
 };</script>
