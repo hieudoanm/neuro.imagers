@@ -458,8 +458,8 @@
   "tracersVersion": "0.0.1",
   "repository": {
     "id": "repository:.",
-    "name": "repository",
-    "root": ".",
+    "name": "neuro.imagers",
+    "root": "/Users/hieudoan/git/github.com/hieudoanm/neuro.imagers",
     "fileCount": 93,
     "languageCount": 23
   },
@@ -10323,12 +10323,6 @@
       "id": "external:rust:neuro_core::CoreError.InvalidInput",
       "kind": "external_symbol",
       "name": "InvalidInput",
-      "language": "rust"
-    },
-    {
-      "id": "external:rust:neuro_store::LocalWorkspace.open",
-      "kind": "external_symbol",
-      "name": "open",
       "language": "rust"
     },
     {
@@ -45254,60 +45248,6 @@
       "language": "rust"
     },
     {
-      "id": "unresolved:rust:crate::IcaComponentInfo",
-      "kind": "unknown",
-      "name": "crate::IcaComponentInfo",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:crate::MegChannel",
-      "kind": "unknown",
-      "name": "crate::MegChannel",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:crate::MegEvent",
-      "kind": "unknown",
-      "name": "crate::MegEvent",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:crate::MegMetadata",
-      "kind": "unknown",
-      "name": "crate::MegMetadata",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:crate::MegSurfacePoint",
-      "kind": "unknown",
-      "name": "crate::MegSurfacePoint",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:crate::fif::FifWriteChannel",
-      "kind": "unknown",
-      "name": "crate::fif::FifWriteChannel",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:crate::ica::IcaModel",
-      "kind": "unknown",
-      "name": "crate::ica::IcaModel",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:crate::ica::IcaTopography",
-      "kind": "unknown",
-      "name": "crate::ica::IcaTopography",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:crate::workspace::WorkspaceState",
-      "kind": "unknown",
-      "name": "crate::workspace::WorkspaceState",
-      "language": "rust"
-    },
-    {
       "id": "unresolved:rust:create_experiment",
       "kind": "unknown",
       "name": "create_experiment",
@@ -45329,12 +45269,6 @@
       "id": "unresolved:rust:create_upload_session",
       "kind": "unknown",
       "name": "create_upload_session",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:ctf::CtfCompMatrix",
-      "kind": "unknown",
-      "name": "ctf::CtfCompMatrix",
       "language": "rust"
     },
     {
@@ -45485,12 +45419,6 @@
       "id": "unresolved:rust:flush",
       "kind": "unknown",
       "name": "flush",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:formats::FileDeclaration",
-      "kind": "unknown",
-      "name": "formats::FileDeclaration",
       "language": "rust"
     },
     {
@@ -45698,12 +45626,6 @@
       "language": "rust"
     },
     {
-      "id": "unresolved:rust:jacobi_eigen",
-      "kind": "unknown",
-      "name": "jacobi_eigen",
-      "language": "rust"
-    },
-    {
       "id": "unresolved:rust:len_of",
       "kind": "unknown",
       "name": "len_of",
@@ -45833,30 +45755,6 @@
       "id": "unresolved:rust:neuro_core::CoreError",
       "kind": "unknown",
       "name": "neuro_core::CoreError",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:neuro_core::ResourceId",
-      "kind": "unknown",
-      "name": "neuro_core::ResourceId",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:neuro_core::ica::IcaComponentInfo",
-      "kind": "unknown",
-      "name": "neuro_core::ica::IcaComponentInfo",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:neuro_core::ica::IcaModel",
-      "kind": "unknown",
-      "name": "neuro_core::ica::IcaModel",
-      "language": "rust"
-    },
-    {
-      "id": "unresolved:rust:neuro_meg::sample::SampleConfig",
-      "kind": "unknown",
-      "name": "neuro_meg::sample::SampleConfig",
       "language": "rust"
     },
     {
@@ -178449,6 +178347,48 @@
     },
     {
       "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
+      "target": "function:crates/neuro-core/src/ica.rs::fastica",
+      "kind": "calls",
+      "status": "resolved_internal",
+      "origin": "lexical",
+      "sites": [
+        {
+          "start": {
+            "line": 749,
+            "column": 29,
+            "byte": 28913
+          },
+          "end": {
+            "line": 749,
+            "column": 87,
+            "byte": 28971
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
+      "target": "function:crates/neuro-core/src/ica.rs::reconstruct",
+      "kind": "calls",
+      "status": "resolved_internal",
+      "origin": "lexical",
+      "sites": [
+        {
+          "start": {
+            "line": 876,
+            "column": 27,
+            "byte": 35000
+          },
+          "end": {
+            "line": 876,
+            "column": 68,
+            "byte": 35041
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
       "target": "function:crates/neuro-eeg/src/pipeline.rs::bandpass_channel",
       "kind": "calls",
       "status": "resolved_internal",
@@ -178779,27 +178719,6 @@
     },
     {
       "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
-      "target": "unresolved:rust:fastica",
-      "kind": "calls",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 749,
-            "column": 29,
-            "byte": 28913
-          },
-          "end": {
-            "line": 749,
-            "column": 87,
-            "byte": 28971
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
       "target": "unresolved:rust:filter_map",
       "kind": "calls",
       "status": "unresolved",
@@ -178989,27 +178908,6 @@
             "line": 756,
             "column": 65,
             "byte": 29320
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
-      "target": "unresolved:rust:reconstruct",
-      "kind": "calls",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 876,
-            "column": 27,
-            "byte": 35000
-          },
-          "end": {
-            "line": 876,
-            "column": 68,
-            "byte": 35041
           }
         }
       ]
@@ -179211,6 +179109,93 @@
     },
     {
       "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
+      "target": "struct:crates/neuro-core/src/ica.rs::IcaComponentInfo",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 562,
+            "column": 40,
+            "byte": 20564
+          },
+          "end": {
+            "line": 562,
+            "column": 63,
+            "byte": 20587
+          }
+        },
+        {
+          "start": {
+            "line": 765,
+            "column": 51,
+            "byte": 29692
+          },
+          "end": {
+            "line": 765,
+            "column": 74,
+            "byte": 29715
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
+      "target": "struct:crates/neuro-core/src/ica.rs::IcaModel",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 561,
+            "column": 31,
+            "byte": 20495
+          },
+          "end": {
+            "line": 561,
+            "column": 51,
+            "byte": 20515
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
+      "target": "struct:crates/neuro-core/src/ica.rs::IcaTopography",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 563,
+            "column": 42,
+            "byte": 20639
+          },
+          "end": {
+            "line": 563,
+            "column": 67,
+            "byte": 20664
+          }
+        },
+        {
+          "start": {
+            "line": 837,
+            "column": 43,
+            "byte": 33343
+          },
+          "end": {
+            "line": 837,
+            "column": 68,
+            "byte": 33368
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
       "target": "struct:crates/neuro-eeg/src/lib.rs::EegEvent",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -179271,93 +179256,6 @@
             "line": 961,
             "column": 25,
             "byte": 39247
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
-      "target": "unresolved:rust:crate::IcaComponentInfo",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 562,
-            "column": 40,
-            "byte": 20564
-          },
-          "end": {
-            "line": 562,
-            "column": 63,
-            "byte": 20587
-          }
-        },
-        {
-          "start": {
-            "line": 765,
-            "column": 51,
-            "byte": 29692
-          },
-          "end": {
-            "line": 765,
-            "column": 74,
-            "byte": 29715
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
-      "target": "unresolved:rust:crate::ica::IcaModel",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 561,
-            "column": 31,
-            "byte": 20495
-          },
-          "end": {
-            "line": 561,
-            "column": 51,
-            "byte": 20515
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-eeg/src/pipeline.rs::run_pipeline",
-      "target": "unresolved:rust:crate::ica::IcaTopography",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 563,
-            "column": 42,
-            "byte": 20639
-          },
-          "end": {
-            "line": 563,
-            "column": 67,
-            "byte": 20664
-          }
-        },
-        {
-          "start": {
-            "line": 837,
-            "column": 43,
-            "byte": 33343
-          },
-          "end": {
-            "line": 837,
-            "column": 68,
-            "byte": 33368
           }
         }
       ]
@@ -180087,6 +179985,27 @@
     },
     {
       "source": "function:crates/neuro-eeg/src/pipeline.rs::ssp_project",
+      "target": "function:crates/neuro-core/src/ica.rs::jacobi_eigen",
+      "kind": "calls",
+      "status": "resolved_internal",
+      "origin": "lexical",
+      "sites": [
+        {
+          "start": {
+            "line": 333,
+            "column": 34,
+            "byte": 12198
+          },
+          "end": {
+            "line": 333,
+            "column": 64,
+            "byte": 12228
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-eeg/src/pipeline.rs::ssp_project",
       "target": "unresolved:rust:clamp",
       "kind": "calls",
       "status": "unresolved",
@@ -180102,27 +180021,6 @@
             "line": 334,
             "column": 38,
             "byte": 12267
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-eeg/src/pipeline.rs::ssp_project",
-      "target": "unresolved:rust:jacobi_eigen",
-      "kind": "calls",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 333,
-            "column": 34,
-            "byte": 12198
-          },
-          "end": {
-            "line": 333,
-            "column": 64,
-            "byte": 12228
           }
         }
       ]
@@ -194964,9 +194862,9 @@
     },
     {
       "source": "function:crates/neuro-meg/src/bids.rs::parse_coordsystem",
-      "target": "unresolved:rust:crate::MegSurfacePoint",
+      "target": "struct:crates/neuro-meg/src/lib.rs::MegSurfacePoint",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -208347,6 +208245,27 @@
     },
     {
       "source": "function:crates/neuro-meg/src/export.rs::export_window_bids",
+      "target": "struct:crates/neuro-meg/src/lib.rs::MegChannel",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 198,
+            "column": 52,
+            "byte": 6394
+          },
+          "end": {
+            "line": 198,
+            "column": 69,
+            "byte": 6411
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-meg/src/export.rs::export_window_bids",
       "target": "struct:crates/neuro-meg/src/lib.rs::MegWindow",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -208362,27 +208281,6 @@
             "line": 146,
             "column": 22,
             "byte": 4776
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-meg/src/export.rs::export_window_bids",
-      "target": "unresolved:rust:crate::MegChannel",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 198,
-            "column": 52,
-            "byte": 6394
-          },
-          "end": {
-            "line": 198,
-            "column": 69,
-            "byte": 6411
           }
         }
       ]
@@ -209616,51 +209514,9 @@
     },
     {
       "source": "function:crates/neuro-meg/src/export.rs::export_window_fif",
-      "target": "struct:crates/neuro-meg/src/lib.rs::MegWindow",
+      "target": "struct:crates/neuro-meg/src/fif.rs::FifWriteChannel",
       "kind": "uses_type",
       "status": "resolved_internal",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 312,
-            "column": 13,
-            "byte": 9944
-          },
-          "end": {
-            "line": 312,
-            "column": 22,
-            "byte": 9953
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-meg/src/export.rs::export_window_fif",
-      "target": "unresolved:rust:crate::MegChannel",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 334,
-            "column": 51,
-            "byte": 10652
-          },
-          "end": {
-            "line": 334,
-            "column": 68,
-            "byte": 10669
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-meg/src/export.rs::export_window_fif",
-      "target": "unresolved:rust:crate::fif::FifWriteChannel",
-      "kind": "uses_type",
-      "status": "unresolved",
       "origin": "syntax",
       "sites": [
         {
@@ -209685,6 +209541,48 @@
             "line": 382,
             "column": 40,
             "byte": 12576
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-meg/src/export.rs::export_window_fif",
+      "target": "struct:crates/neuro-meg/src/lib.rs::MegChannel",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 334,
+            "column": 51,
+            "byte": 10652
+          },
+          "end": {
+            "line": 334,
+            "column": 68,
+            "byte": 10669
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-meg/src/export.rs::export_window_fif",
+      "target": "struct:crates/neuro-meg/src/lib.rs::MegWindow",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 312,
+            "column": 13,
+            "byte": 9944
+          },
+          "end": {
+            "line": 312,
+            "column": 22,
+            "byte": 9953
           }
         }
       ]
@@ -217242,9 +217140,9 @@
     },
     {
       "source": "function:crates/neuro-meg/src/fif.rs::info_events",
-      "target": "unresolved:rust:crate::MegEvent",
+      "target": "struct:crates/neuro-meg/src/lib.rs::MegEvent",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -238695,9 +238593,9 @@
     },
     {
       "source": "function:crates/neuro-meg/src/lib.rs::validate_file_set",
-      "target": "unresolved:rust:formats::FileDeclaration",
+      "target": "struct:crates/neuro-meg/src/formats.rs::FileDeclaration",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -239244,9 +239142,9 @@
     },
     {
       "source": "function:crates/neuro-meg/src/pipeline.rs::component_variances",
-      "target": "unresolved:rust:neuro_core::ica::IcaComponentInfo",
+      "target": "struct:crates/neuro-core/src/ica.rs::IcaComponentInfo",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -240489,6 +240387,27 @@
     },
     {
       "source": "function:crates/neuro-meg/src/pipeline.rs::epoch_window",
+      "target": "struct:crates/neuro-meg/src/lib.rs::MegEvent",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 249,
+            "column": 15,
+            "byte": 8262
+          },
+          "end": {
+            "line": 249,
+            "column": 30,
+            "byte": 8277
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-meg/src/pipeline.rs::epoch_window",
       "target": "struct:crates/neuro-meg/src/lib.rs::MegWindow",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -240537,27 +240456,6 @@
             "line": 292,
             "column": 26,
             "byte": 9930
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-meg/src/pipeline.rs::epoch_window",
-      "target": "unresolved:rust:crate::MegEvent",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 249,
-            "column": 15,
-            "byte": 8262
-          },
-          "end": {
-            "line": 249,
-            "column": 30,
-            "byte": 8277
           }
         }
       ]
@@ -245193,6 +245091,81 @@
     },
     {
       "source": "function:crates/neuro-meg/src/pipeline.rs::run_pipeline",
+      "target": "struct:crates/neuro-core/src/ica.rs::IcaComponentInfo",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 357,
+            "column": 40,
+            "byte": 11928
+          },
+          "end": {
+            "line": 357,
+            "column": 73,
+            "byte": 11961
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-meg/src/pipeline.rs::run_pipeline",
+      "target": "struct:crates/neuro-core/src/ica.rs::IcaModel",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 356,
+            "column": 30,
+            "byte": 11841
+          },
+          "end": {
+            "line": 356,
+            "column": 55,
+            "byte": 11866
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-meg/src/pipeline.rs::run_pipeline",
+      "target": "struct:crates/neuro-meg/src/lib.rs::MegEvent",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 399,
+            "column": 35,
+            "byte": 13782
+          },
+          "end": {
+            "line": 399,
+            "column": 50,
+            "byte": 13797
+          }
+        },
+        {
+          "start": {
+            "line": 588,
+            "column": 40,
+            "byte": 23102
+          },
+          "end": {
+            "line": 588,
+            "column": 55,
+            "byte": 23117
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-meg/src/pipeline.rs::run_pipeline",
       "target": "struct:crates/neuro-meg/src/lib.rs::MegMetadata",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -245337,81 +245310,6 @@
             "line": 703,
             "column": 22,
             "byte": 28169
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-meg/src/pipeline.rs::run_pipeline",
-      "target": "unresolved:rust:crate::MegEvent",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 399,
-            "column": 35,
-            "byte": 13782
-          },
-          "end": {
-            "line": 399,
-            "column": 50,
-            "byte": 13797
-          }
-        },
-        {
-          "start": {
-            "line": 588,
-            "column": 40,
-            "byte": 23102
-          },
-          "end": {
-            "line": 588,
-            "column": 55,
-            "byte": 23117
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-meg/src/pipeline.rs::run_pipeline",
-      "target": "unresolved:rust:neuro_core::ica::IcaComponentInfo",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 357,
-            "column": 40,
-            "byte": 11928
-          },
-          "end": {
-            "line": 357,
-            "column": 73,
-            "byte": 11961
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-meg/src/pipeline.rs::run_pipeline",
-      "target": "unresolved:rust:neuro_core::ica::IcaModel",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 356,
-            "column": 30,
-            "byte": 11841
-          },
-          "end": {
-            "line": 356,
-            "column": 55,
-            "byte": 11866
           }
         }
       ]
@@ -246276,6 +246174,27 @@
     },
     {
       "source": "function:crates/neuro-meg/src/pipeline.rs::synthetic_gradiometers",
+      "target": "struct:crates/neuro-meg/src/lib.rs::MegMetadata",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 184,
+            "column": 16,
+            "byte": 6166
+          },
+          "end": {
+            "line": 184,
+            "column": 34,
+            "byte": 6184
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:crates/neuro-meg/src/pipeline.rs::synthetic_gradiometers",
       "target": "struct:crates/neuro-meg/src/lib.rs::MegWindow",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -246291,27 +246210,6 @@
             "line": 182,
             "column": 27,
             "byte": 6119
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:crates/neuro-meg/src/pipeline.rs::synthetic_gradiometers",
-      "target": "unresolved:rust:crate::MegMetadata",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 184,
-            "column": 16,
-            "byte": 6166
-          },
-          "end": {
-            "line": 184,
-            "column": 34,
-            "byte": 6184
           }
         }
       ]
@@ -304401,9 +304299,30 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::begin_run",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:crates/neuro-core/src/lib.rs::ResourceId",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 1021,
+            "column": 9,
+            "byte": 34441
+          },
+          "end": {
+            "line": 1021,
+            "column": 31,
+            "byte": 34463
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:packages/desktop/src-tauri/src/commands.rs::begin_run",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
+      "kind": "uses_type",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -304437,27 +304356,6 @@
             "line": 1020,
             "column": 32,
             "byte": 34431
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:packages/desktop/src-tauri/src/commands.rs::begin_run",
-      "target": "unresolved:rust:neuro_core::ResourceId",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 1021,
-            "column": 9,
-            "byte": 34441
-          },
-          "end": {
-            "line": 1021,
-            "column": 31,
-            "byte": 34463
           }
         }
       ]
@@ -305397,9 +305295,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::delete_pipeline_preset",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -306336,6 +306234,27 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_eeg_analysis",
+      "target": "struct:crates/neuro-core/src/lib.rs::ResourceId",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 289,
+            "column": 18,
+            "byte": 9877
+          },
+          "end": {
+            "line": 289,
+            "column": 40,
+            "byte": 9899
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_eeg_analysis",
       "target": "struct:crates/neuro-eeg/src/lib.rs::EegAnalysisResult",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -306393,27 +306312,6 @@
             "line": 288,
             "column": 34,
             "byte": 9858
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_eeg_analysis",
-      "target": "unresolved:rust:neuro_core::ResourceId",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 289,
-            "column": 18,
-            "byte": 9877
-          },
-          "end": {
-            "line": 289,
-            "column": 40,
-            "byte": 9899
           }
         }
       ]
@@ -307296,6 +307194,27 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_eeg_pipeline",
+      "target": "struct:crates/neuro-core/src/lib.rs::ResourceId",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 415,
+            "column": 18,
+            "byte": 14286
+          },
+          "end": {
+            "line": 415,
+            "column": 40,
+            "byte": 14308
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_eeg_pipeline",
       "target": "struct:packages/desktop/src-tauri/src/commands.rs::EegPipelineRequest",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -307332,27 +307251,6 @@
             "line": 414,
             "column": 34,
             "byte": 14267
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_eeg_pipeline",
-      "target": "unresolved:rust:neuro_core::ResourceId",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 415,
-            "column": 18,
-            "byte": 14286
-          },
-          "end": {
-            "line": 415,
-            "column": 40,
-            "byte": 14308
           }
         }
       ]
@@ -308376,6 +308274,27 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_meg_pipeline",
+      "target": "struct:crates/neuro-core/src/lib.rs::ResourceId",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 1569,
+            "column": 18,
+            "byte": 54016
+          },
+          "end": {
+            "line": 1569,
+            "column": 40,
+            "byte": 54038
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_meg_pipeline",
       "target": "struct:packages/desktop/src-tauri/src/commands.rs::MegPipelineRequest",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -308412,27 +308331,6 @@
             "line": 1568,
             "column": 34,
             "byte": 53997
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_meg_pipeline",
-      "target": "unresolved:rust:neuro_core::ResourceId",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 1569,
-            "column": 18,
-            "byte": 54016
-          },
-          "end": {
-            "line": 1569,
-            "column": 40,
-            "byte": 54038
           }
         }
       ]
@@ -309624,6 +309522,27 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_mri_operation",
+      "target": "struct:crates/neuro-core/src/lib.rs::ResourceId",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 1225,
+            "column": 18,
+            "byte": 41476
+          },
+          "end": {
+            "line": 1225,
+            "column": 40,
+            "byte": 41498
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_mri_operation",
       "target": "struct:packages/desktop/src-tauri/src/commands.rs::MriOperationRequest",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -309660,27 +309579,6 @@
             "line": 1224,
             "column": 34,
             "byte": 41457
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:packages/desktop/src-tauri/src/commands.rs::execute_mri_operation",
-      "target": "unresolved:rust:neuro_core::ResourceId",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 1225,
-            "column": 18,
-            "byte": 41476
-          },
-          "end": {
-            "line": 1225,
-            "column": 40,
-            "byte": 41498
           }
         }
       ]
@@ -312474,9 +312372,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::export_run_artifact",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -312969,6 +312867,27 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::generate_meg_sample",
+      "target": "struct:crates/neuro-meg/src/sample.rs::SampleConfig",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 1392,
+            "column": 18,
+            "byte": 47879
+          },
+          "end": {
+            "line": 1392,
+            "column": 49,
+            "byte": 47910
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:packages/desktop/src-tauri/src/commands.rs::generate_meg_sample",
       "target": "struct:packages/desktop/src-tauri/src/commands.rs::GenerateMegSampleRequest",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -312984,27 +312903,6 @@
             "line": 1391,
             "column": 61,
             "byte": 47821
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:packages/desktop/src-tauri/src/commands.rs::generate_meg_sample",
-      "target": "unresolved:rust:neuro_meg::sample::SampleConfig",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 1392,
-            "column": 18,
-            "byte": 47879
-          },
-          "end": {
-            "line": 1392,
-            "column": 49,
-            "byte": 47910
           }
         }
       ]
@@ -317187,9 +317085,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::list_pipeline_presets",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -317817,9 +317715,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::run_eeg_analysis",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -318027,9 +317925,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::run_eeg_pipeline",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -318384,9 +318282,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::run_meg_pipeline",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -318615,9 +318513,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::run_mri_operation",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -319980,9 +319878,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::save_pipeline_preset",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -320244,9 +320142,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::submit_eeg_analysis",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -320508,9 +320406,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::submit_eeg_pipeline",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -321249,9 +321147,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::submit_meg_batch",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -321513,9 +321411,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::submit_meg_pipeline",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -321798,9 +321696,9 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/commands.rs::submit_mri_operation",
-      "target": "unresolved:rust:crate::workspace::WorkspaceState",
+      "target": "struct:packages/desktop/src-tauri/src/workspace.rs::WorkspaceState",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -322323,27 +322221,6 @@
     },
     {
       "source": "function:packages/desktop/src-tauri/src/lib.rs::run",
-      "target": "external:rust:neuro_store::LocalWorkspace.open",
-      "kind": "calls",
-      "status": "resolved_external",
-      "origin": "lexical",
-      "sites": [
-        {
-          "start": {
-            "line": 11,
-            "column": 29,
-            "byte": 249
-          },
-          "end": {
-            "line": 11,
-            "column": 90,
-            "byte": 310
-          }
-        }
-      ]
-    },
-    {
-      "source": "function:packages/desktop/src-tauri/src/lib.rs::run",
       "target": "external:rust:std::Ok",
       "kind": "calls",
       "status": "resolved_external",
@@ -322569,6 +322446,27 @@
             "line": 15,
             "column": 11,
             "byte": 502
+          }
+        }
+      ]
+    },
+    {
+      "source": "function:packages/desktop/src-tauri/src/lib.rs::run",
+      "target": "method:crates/neuro-store/src/lib.rs::LocalWorkspace.open",
+      "kind": "calls",
+      "status": "resolved_internal",
+      "origin": "lexical",
+      "sites": [
+        {
+          "start": {
+            "line": 11,
+            "column": 29,
+            "byte": 249
+          },
+          "end": {
+            "line": 11,
+            "column": 90,
+            "byte": 310
           }
         }
       ]
@@ -388181,9 +388079,9 @@
     },
     {
       "source": "struct:crates/neuro-eeg/src/pipeline.rs::EegPipelineResult",
-      "target": "unresolved:rust:crate::IcaComponentInfo",
+      "target": "struct:crates/neuro-core/src/ica.rs::IcaComponentInfo",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -388202,9 +388100,9 @@
     },
     {
       "source": "struct:crates/neuro-eeg/src/pipeline.rs::EegPipelineResult",
-      "target": "unresolved:rust:crate::ica::IcaTopography",
+      "target": "struct:crates/neuro-core/src/ica.rs::IcaTopography",
       "kind": "uses_type",
-      "status": "unresolved",
+      "status": "resolved_internal",
       "origin": "syntax",
       "sites": [
         {
@@ -388478,6 +388376,27 @@
     },
     {
       "source": "struct:crates/neuro-meg/src/lib.rs::MegMetadata",
+      "target": "struct:crates/neuro-meg/src/ctf.rs::CtfCompMatrix",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 52,
+            "column": 27,
+            "byte": 1555
+          },
+          "end": {
+            "line": 52,
+            "column": 45,
+            "byte": 1573
+          }
+        }
+      ]
+    },
+    {
+      "source": "struct:crates/neuro-meg/src/lib.rs::MegMetadata",
       "target": "struct:crates/neuro-meg/src/lib.rs::MegChannel",
       "kind": "uses_type",
       "status": "resolved_internal",
@@ -388540,27 +388459,6 @@
       ]
     },
     {
-      "source": "struct:crates/neuro-meg/src/lib.rs::MegMetadata",
-      "target": "unresolved:rust:ctf::CtfCompMatrix",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 52,
-            "column": 27,
-            "byte": 1555
-          },
-          "end": {
-            "line": 52,
-            "column": 45,
-            "byte": 1573
-          }
-        }
-      ]
-    },
-    {
       "source": "struct:crates/neuro-meg/src/pipeline.rs::PipelineResult",
       "target": "external:rust:std::BTreeMap",
       "kind": "uses_type",
@@ -388577,6 +388475,27 @@
             "line": 39,
             "column": 37,
             "byte": 1080
+          }
+        }
+      ]
+    },
+    {
+      "source": "struct:crates/neuro-meg/src/pipeline.rs::PipelineResult",
+      "target": "struct:crates/neuro-core/src/ica.rs::IcaComponentInfo",
+      "kind": "uses_type",
+      "status": "resolved_internal",
+      "origin": "syntax",
+      "sites": [
+        {
+          "start": {
+            "line": 44,
+            "column": 36,
+            "byte": 1295
+          },
+          "end": {
+            "line": 44,
+            "column": 69,
+            "byte": 1328
           }
         }
       ]
@@ -388661,27 +388580,6 @@
             "line": 38,
             "column": 38,
             "byte": 1041
-          }
-        }
-      ]
-    },
-    {
-      "source": "struct:crates/neuro-meg/src/pipeline.rs::PipelineResult",
-      "target": "unresolved:rust:neuro_core::ica::IcaComponentInfo",
-      "kind": "uses_type",
-      "status": "unresolved",
-      "origin": "syntax",
-      "sites": [
-        {
-          "start": {
-            "line": 44,
-            "column": 36,
-            "byte": 1295
-          },
-          "end": {
-            "line": 44,
-            "column": 69,
-            "byte": 1328
           }
         }
       ]
@@ -389291,15 +389189,15 @@
   "statistics": {
     "files": 93,
     "packages": 3,
-    "nodes": 5296,
+    "nodes": 5279,
     "edges": 16921,
     "symbols": 4377,
-    "unresolvedEdges": 1060,
+    "unresolvedEdges": 1018,
     "diagnostics": 5,
     "byNodeKind": {
       "constant": 423,
       "enum": 4,
-      "external_symbol": 436,
+      "external_symbol": 435,
       "file": 93,
       "framework": 12,
       "function": 526,
@@ -389311,7 +389209,7 @@
       "repository": 1,
       "struct": 85,
       "type": 3,
-      "unknown": 257,
+      "unknown": 241,
       "variable": 2570
     },
     "byEdgeKind": {
@@ -389328,14 +389226,14 @@
       "bash": 8,
       "javascript": 14,
       "markdown": 34,
-      "rust": 4334,
+      "rust": 4317,
       "tsx": 628,
       "typescript": 262
     },
     "byStatus": {
-      "resolved_external": 4479,
-      "resolved_internal": 11382,
-      "unresolved": 1060
+      "resolved_external": 4478,
+      "resolved_internal": 11425,
+      "unresolved": 1018
     },
     "byFramework": {
       "chrono": 1,
