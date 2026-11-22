@@ -2,9 +2,11 @@ name: CI
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
   pull_request:
-    branches: [master]
+    branches:
+      - master
   workflow_dispatch:
 
 permissions:
@@ -88,7 +90,7 @@ jobs:
         uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .nvmrc
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
@@ -125,7 +127,7 @@ jobs:
         uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .nvmrc
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - name: Install landing dependencies
         working-directory: packages/landing
@@ -164,14 +166,18 @@ jobs:
 
   desktop-build:
     name: Desktop build (${{ matrix.os }})
-    needs: [desktop-check]
+    needs:
+      - desktop-check
     # Release bundles are only needed for the master-branch release job;
     # PRs are covered by the `desktop-check` job.
     if: github.event_name != 'pull_request'
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -184,7 +190,7 @@ jobs:
         uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .nvmrc
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - name: Set up Rust
         uses: dtolnay/rust-toolchain@stable
@@ -269,7 +275,8 @@ jobs:
 
   release:
     name: Release
-    needs: [desktop-build]
+    needs:
+      - desktop-build
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     permissions:
