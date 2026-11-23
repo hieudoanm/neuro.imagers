@@ -72,19 +72,25 @@ const DESKTOP: Platform[] = [
     assets: [
       {
         label: '.dmg (Apple Silicon)',
-        href: `${RELEASES}/Neuro.Imagers_0.1.0_aarch64.dmg`,
+        href: `${RELEASES}/desktop-neuro-aarch64-apple-darwin.dmg`,
       },
-      { label: '.app.zip', href: `${RELEASES}/Neuro.Imagers.app.zip` },
+      {
+        label: '.app.zip',
+        href: `${RELEASES}/desktop-neuro-aarch64-apple-darwin.app.zip`,
+      },
     ],
   },
   {
     name: 'Windows',
     icon: FaWindows,
     assets: [
-      { label: 'MSI', href: `${RELEASES}/Neuro.Imagers_0.1.0_x64_en-US.msi` },
+      {
+        label: 'MSI',
+        href: `${RELEASES}/desktop-neuro-x86_64-pc-windows-msvc.msi`,
+      },
       {
         label: 'Setup (.exe)',
-        href: `${RELEASES}/Neuro.Imagers_0.1.0_x64-setup.exe`,
+        href: `${RELEASES}/desktop-neuro-x86_64-pc-windows-msvc-setup.exe`,
       },
     ],
   },
@@ -94,15 +100,15 @@ const DESKTOP: Platform[] = [
     assets: [
       {
         label: '.deb (amd64)',
-        href: `${RELEASES}/Neuro.Imagers_0.1.0_amd64.deb`,
+        href: `${RELEASES}/desktop-neuro-x86_64-unknown-linux-gnu.deb`,
       },
       {
         label: '.rpm (x86_64)',
-        href: `${RELEASES}/Neuro.Imagers-0.1.0-1.x86_64.rpm`,
+        href: `${RELEASES}/desktop-neuro-x86_64-unknown-linux-gnu.rpm`,
       },
       {
         label: '.AppImage (amd64)',
-        href: `${RELEASES}/Neuro.Imagers_0.1.0_amd64.AppImage`,
+        href: `${RELEASES}/desktop-neuro-x86_64-unknown-linux-gnu.AppImage`,
       },
     ],
   },
