@@ -9,7 +9,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 const GITHUB = 'https://github.com/hieudoanm/neuro.imagers';
 const LOGO =
-  process.env.NODE_ENV === 'production' ? '/neuro.imagers/logo.svg' : '/logo.svg';
+  process.env.NODE_ENV === 'production'
+    ? '/neuro.imagers/logo.svg'
+    : '/logo.svg';
 
 const NAV_LINKS = [
   { label: 'Features', href: '#features' },
@@ -17,6 +19,7 @@ const NAV_LINKS = [
   { label: 'How it works', href: '#how-it-works' },
   { label: 'Install', href: '#install' },
   { label: 'Docs', href: '/docs/' },
+  { label: 'Downloads', href: '/downloads/' },
 ];
 
 const DESCRIPTION =
@@ -39,7 +42,9 @@ export const metadata: Metadata = {
     'Rust',
     'MCP server',
   ],
-  authors: [{ name: 'hieudoan', url: 'https://github.com/hieudoanm/neuro.imagers' }],
+  authors: [
+    { name: 'hieudoan', url: 'https://github.com/hieudoanm/neuro.imagers' },
+  ],
   category: 'software',
   openGraph: {
     siteName: 'Neuro Imagers',
@@ -58,7 +63,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 const JSON_LD = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -66,18 +70,20 @@ const JSON_LD = {
       '@type': 'WebSite',
       name: 'Neuro Imagers',
       url: 'https://hieudoanm.github.io/neuro.imagers/',
-      description: 'Neuro Imagers is a local-first neuroimaging desktop app for EEG, MEG, and MRI. Rust processing crates behind a Tauri interface — recordings never leave your machine.',
+      description:
+        'Neuro Imagers is a local-first neuroimaging desktop app for EEG, MEG, and MRI. Rust processing crates behind a Tauri interface — recordings never leave your machine.',
     },
     {
       '@type': 'SoftwareApplication',
       name: 'Neuro Imagers',
       applicationCategory: 'MultimediaApplication',
-      description: 'Neuro Imagers is a local-first neuroimaging desktop app for EEG, MEG, and MRI. Rust processing crates behind a Tauri interface — recordings never leave your machine.',
+      description:
+        'Neuro Imagers is a local-first neuroimaging desktop app for EEG, MEG, and MRI. Rust processing crates behind a Tauri interface — recordings never leave your machine.',
       url: 'https://hieudoanm.github.io/neuro.imagers/',
       codeRepository: 'https://github.com/hieudoanm/neuro.imagers',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     },
-  ]
+  ],
 };
 
 interface RootLayoutProps {
