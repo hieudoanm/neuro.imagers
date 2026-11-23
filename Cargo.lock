@@ -2104,7 +2104,7 @@ dependencies = [
 
 [[package]]
 name = "neuro-cli"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "clap",
  "neuro-core",
@@ -2117,7 +2117,7 @@ dependencies = [
 
 [[package]]
 name = "neuro-core"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "chrono",
  "hex",
@@ -2130,7 +2130,7 @@ dependencies = [
 
 [[package]]
 name = "neuro-eeg"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "hex",
  "ndarray",
@@ -2145,7 +2145,7 @@ dependencies = [
 
 [[package]]
 name = "neuro-imagers-desktop"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "chrono",
  "neuro-core",
@@ -2163,7 +2163,7 @@ dependencies = [
 
 [[package]]
 name = "neuro-meg"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "flate2",
  "neuro-core",
@@ -2175,7 +2175,7 @@ dependencies = [
 
 [[package]]
 name = "neuro-mri"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "ndarray",
  "neuro-core",
@@ -2188,7 +2188,7 @@ dependencies = [
 
 [[package]]
 name = "neuro-store"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "chrono",
  "neuro-core",
