@@ -4,6 +4,7 @@ import type { IconType } from 'react-icons';
 import {
   FaApple,
   FaBoxOpen,
+  FaBrain,
   FaDownload,
   FaLinux,
   FaTerminal,
@@ -144,6 +145,8 @@ const DESKTOP: Cell[] = [
   },
 ];
 
+const MODELS: Cell[] = [];
+
 function Section({
   icon: Icon,
   title,
@@ -225,6 +228,12 @@ const Downloads: FC = () => (
         <Section icon={FaBoxOpen} title="Desktop">
           <CardGrid cells={DESKTOP} cols="lg:grid-cols-4" />
         </Section>
+
+        {MODELS.length > 0 && (
+          <Section icon={FaBrain} title="Models">
+            <CardGrid cells={MODELS} cols="lg:grid-cols-3" />
+          </Section>
+        )}
       </div>
     </section>
   </main>
