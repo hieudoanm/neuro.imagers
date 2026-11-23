@@ -60,6 +60,7 @@ jobs:
         os:
           - ubuntu-latest
           - macos-latest
+          - macos-15-intel
           - windows-latest
     steps:
       - name: Checkout
@@ -82,6 +83,7 @@ jobs:
           case "${{ matrix.os }}" in
             ubuntu-latest) mv target/release/neuro cli-neuro-x86_64-unknown-linux-gnu ;;
             macos-latest) mv target/release/neuro cli-neuro-aarch64-apple-darwin ;;
+            macos-15-intel) mv target/release/neuro cli-neuro-x86_64-apple-darwin ;;
             windows-latest) mv target/release/neuro.exe cli-neuro-x86_64-pc-windows-msvc.exe ;;
           esac
 
