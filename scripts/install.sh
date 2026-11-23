@@ -7,7 +7,8 @@
 #
 #   1. Download the latest GitHub release bundle for this platform, if one
 #      has been published (assets are matched by arch/extension, e.g.
-#      "Neuro Imagers_0.1.0_aarch64.dmg" or "Neuro Imagers_0.1.0_amd64.AppImage").
+#      "desktop-neuro-aarch64-apple-darwin.dmg" or
+#      "desktop-neuro-x86_64-unknown-linux-gnu.AppImage").
 #   2. Clone the repository and build from source (same as install-local.sh).
 #
 # Usage:
@@ -31,31 +32,33 @@ echo "Detected platform: ${OS_LOWER}-${ARCH}"
 # --- 1. Try published release assets ------------------------------------------
 
 # Tauri bundle arch strings differ per platform: macOS uses aarch64/x86_64,
-# Linux AppImages use x86_64 (and aarch64 where built), Windows uses x64/arm64.
+# Linux bundles use x86_64 (and aarch64 where built), Windows uses x64/arm64.
+# The detected arch is tried first so multi-arch releases pick correctly.
 asset_arch_candidates() {
+  local base
   case "$1" in
-    dmg)        echo "aarch64 x86_64" ;;
-    appimage)   echo "x86_64 aarch64" ;;
-    deb|rpm)    echo "amd64 x86_64 arm64 aarch64" ;;
-    msi|exe)    echo "x64 x86_64 arm64 aarch64" ;;
+    dmg)        base="aarch64 x86_64" ;;
+    appimage)   base="x86_64 aarch64" ;;
+    deb|rpm)    base="amd64 x86_64 arm64 aarch64" ;;
+    msi|exe)    base="x64 x86_64 arm64 aarch64" ;;
   esac
+  echo "$ARCH $base" | tr ' ' '\n' | awk '!seen[$0]++'
 }
 
 pick_asset() {
   # $1 = extension filter; prints the best-matching asset name, if any.
-  local ext="$1"
+  local ext="$1" cand name names
   command -v gh >/dev/null 2>&1 || return 1
-  gh release view latest --repo "$REPO" --json assets \
-    --jq '.assets[].name' 2>/dev/null | while read -r name; do
-      [[ "$name" == *."$ext" ]] || continue
-      [[ "$name" == cli-neuro-* ]] && continue
-      for cand in $(asset_arch_candidates "$ext"); do
-        if [[ "$name" == *"$cand"* ]]; then
-          echo "$name"
-          exit 0
-        fi
-      done
-    done | head -1
+  names="$(gh release view latest --repo "$REPO" --json assets \
+    --jq '.assets[].name' 2>/dev/null)" || return 1
+  for cand in $(asset_arch_candidates "$ext"); do
+    while IFS= read -r name; do
+      [[ "$name" == *."$ext" && "$name" == *"$cand"* && "$name" != cli-neuro-* ]] || continue
+      echo "$name"
+      return 0
+    done <<< "$names"
+  done
+  return 1
 }
 
 download_and_install() {
