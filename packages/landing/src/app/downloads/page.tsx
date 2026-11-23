@@ -207,7 +207,10 @@ const Downloads: FC = () => (
           </h1>
           <p className="mt-3 text-lg text-gray-500">
             A local-first workbench for EEG, MEG, and MRI — desktop app or CLI.
-            Recordings never leave your machine. Assets are in the{' '}
+            Recordings never leave your machine.
+          </p>
+          <p className="mt-3 text-lg text-gray-500">
+            Assets are in the{' '}
             <a href={RELEASE_PAGE} className="text-primary">
               latest release
             </a>
