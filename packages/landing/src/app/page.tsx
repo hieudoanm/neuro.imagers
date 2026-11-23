@@ -6,14 +6,14 @@ import Hero from '@/components/molecules/Hero';
 import SectionHead from '@/components/molecules/SectionHead';
 import Terminal from '@/components/molecules/Terminal';
 import {
-  LuActivity,
-  LuBot,
-  LuBoxes,
-  LuClipboardCheck,
-  LuDownload,
-  LuList,
-  LuScan,
-} from 'react-icons/lu';
+  PiPulse,
+  PiRobot,
+  PiCube,
+  PiClipboardText,
+  PiDownloadSimple,
+  PiList,
+  PiScan,
+} from 'react-icons/pi';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -23,37 +23,37 @@ const GITHUB = 'https://github.com/hieudoanm/neuro.imagers';
 
 const FEATURES: Feature[] = [
   {
-    icon: LuActivity,
+    icon: PiPulse,
     title: 'EEG pipelines',
     body: 'BrainVision, EDF+, and NPY input. Filtering, re-referencing, baseline correction, event-locked epoching, FastICA with topographies, and SSP.',
   },
   {
-    icon: LuScan,
+    icon: PiScan,
     title: 'MEG pipelines',
     body: 'FIF, CTF, KIT, BIDS, and OPM input. Compensation grades, FIF projectors, synthetic gradiometers, ICA, SSP, epoching and evoked responses — plus a low-order SSS approximation.',
   },
   {
-    icon: LuBoxes,
+    icon: PiCube,
     title: 'MRI pipelines',
     body: 'NIfTI and DICOM volumes with multiplanar slices, MIP, statistics, bias-field correction, heuristic skull stripping, and rigid/affine registration.',
   },
   {
-    icon: LuList,
+    icon: PiList,
     title: 'Reproducible pipelines',
     body: 'Pipelines are plain JSON node lists — filter, rereference, ICA, SSP, epoch, register — saved as named presets. Every run records its parameters and produces a manifest.',
   },
   {
-    icon: LuDownload,
+    icon: PiDownloadSimple,
     title: 'Interoperable exports',
     body: 'NPY, CSV, and EDF for signals; FIF output validated against MNE; BIDS datasets; NIfTI volumes; DICOM converted to NIfTI with spatial metadata preserved.',
   },
   {
-    icon: LuClipboardCheck,
+    icon: PiClipboardText,
     title: 'Versioned, resumable storage',
     body: 'Chunked uploads with SHA-256 integrity verification, dataset versions, experiment records, and artifact provenance — all in a local workspace database.',
   },
   {
-    icon: LuBot,
+    icon: PiRobot,
     title: 'MCP server',
     body: 'neuro mcp lets agents inspect, validate, convert, and export EEG, MEG, and MRI recordings through typed tools — fully local, over stdio.',
   },
