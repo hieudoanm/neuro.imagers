@@ -48,6 +48,7 @@ pick_asset() {
   gh release view latest --repo "$REPO" --json assets \
     --jq '.assets[].name' 2>/dev/null | while read -r name; do
       [[ "$name" == *."$ext" ]] || continue
+      [[ "$name" == cli-neuro-* ]] && continue
       for cand in $(asset_arch_candidates "$ext"); do
         if [[ "$name" == *"$cand"* ]]; then
           echo "$name"
