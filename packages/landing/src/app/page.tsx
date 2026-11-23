@@ -222,12 +222,8 @@ const HomePage: NextPage = () => (
     <CTA
       title="Ready to process recordings?"
       description="EEG, MEG, and MRI — all local, all reproducible."
-      primary={{ label: 'View on GitHub', href: GITHUB, external: true }}
-      secondary={{
-        label: 'Read the README',
-        href: `${GITHUB}#readme`,
-        external: true,
-      }}
+      primary={{ label: 'Download', href: '/downloads/' }}
+      secondary={{ label: 'View Docs', href: '/docs/' }}
     />
   </main>
 );
