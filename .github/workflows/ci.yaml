@@ -362,4 +362,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          find dist -type f \( -name '*.dmg' -o -name '*.AppImage' -o -name '*.deb' -o -name '*.rpm' -o -name '*.msi' -o -name '*.exe' -o -name '*.zip' \) -exec gh release upload latest {} --clobber \;
+          find dist -type f \( -name 'desktop-neuro-*' \) -exec gh release upload latest {} --clobber \;
+
+      - name: Upload CLI binaries to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          find dist -type f -name 'cli-neuro-*' -exec gh release upload latest {} --clobber \;
