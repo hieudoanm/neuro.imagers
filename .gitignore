@@ -4,3 +4,4 @@ target/
 .DS_Store
 reference/
 .tracers-cache/
+.tracers/cache/
