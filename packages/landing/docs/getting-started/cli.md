@@ -20,5 +20,12 @@ neuro convert-dicom scan.dcm -o volume.nii
 neuro --help                            # all subcommands
 ```
 
-`inspect-eeg` summarises an EEG recording, `validate-meg` checks a MEG
-dataset directory, and `convert-dicom` exports a volume (e.g. NIfTI).
+`inspect-eeg` summarises an EEG recording, `validate-meg` checks a MEG dataset
+directory, and `convert-dicom` exports a volume (e.g. NIfTI).
+
+## Per-platform guides
+
+- [macOS (Apple Silicon)](../guides/how-to-install-cli-macos-silicon.md)
+- [macOS (Intel)](../guides/how-to-install-cli-macos-intel.md)
+- [Linux](../guides/how-to-install-cli-linux.md)
+- [Windows](../guides/how-to-install-cli-windows.md)

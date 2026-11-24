@@ -21,3 +21,10 @@ pnpm tauri:build          # production bundles under target/release/bundle
 
 - Node.js (see `.nvmrc`) and pnpm
 - Rust stable toolchain
+
+## Per-platform guides
+
+- [macOS (Apple Silicon)](../guides/how-to-install-desktop-macos-silicon.md)
+- [macOS (Intel)](../guides/how-to-install-desktop-macos-intel.md)
+- [Linux](../guides/how-to-install-desktop-linux.md)
+- [Windows](../guides/how-to-install-desktop-windows.md)
