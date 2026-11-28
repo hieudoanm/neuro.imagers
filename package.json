@@ -28,8 +28,8 @@
     "!(vendor)/**/*.rs": "rustfmt --edition 2024"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.2.4",
-    "@commitlint/config-conventional": "21.2.4",
+    "@commitlint/cli": "21.3.0",
+    "@commitlint/config-conventional": "21.3.0",
     "husky": "9.1.7",
     "lint-staged": "17.6.3",
     "prettier": "3.10.1",
